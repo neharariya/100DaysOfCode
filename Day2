@@ -1,0 +1,89 @@
+/*FINDING THE NUMBER OF ELEMENTS BETWEEN TWO ELEMENTS OF A ARRAY*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+        int i=0
+        int j,k=-1;
+        int num1=3;
+        int num2=20;
+     
+        int ans=0;
+        int arr[14]={16 ,19 ,3 ,14, 11, 7, 20, 2, 17, 6, 18, 11, 20, 4};
+        
+        for(;i<14;i++)
+        {
+            if(arr[i]== num1)
+            {
+                j=i;
+                break;
+            }
+        }
+        
+        for(i=j+1;i<14;i++)
+        {
+            if(arr[i]==num2)
+            {
+                k=i;
+            }
+        }
+        
+        if(j==-1 || k==-1)
+        {
+            cout<<0;
+        }
+        
+        ans= (k-j)-1;
+        
+        cout<<ans;
+
+    return 0;
+}
+
+/* FINDING THE 1ST REPEATING ELEMENT POSITION IN THE ARRAY*/
+/*  returning -1 when all the elements in the array are unique */
+
+#include <iostream>
+using namespace std;
+
+int firstRepeated(int arr[], int n)
+{
+        
+       int i,j=0;
+       int x = arr[j];
+       int count=0;
+       int position = 0;
+       
+       for(j=0; j<n;j++)
+       {
+           for(i=j+1;i<n;i++)
+           {
+               if(x == arr[i])
+               {
+                   count++;
+               }
+           }
+           
+           if(count>=1)
+           {
+               for(i=0; i<n;i++)
+               {
+                   if(x == arr[i])
+                   {
+                        position = j+1;
+                        return position;
+                   }
+               }
+              
+           }
+           
+           x = arr[j+1];
+           
+       }
+       
+       return -1;
+    } 
+
+
