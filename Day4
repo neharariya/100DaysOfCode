@@ -1,0 +1,83 @@
+/* CHECKING IF A NUMBER IS PRIME OR NOT?*/
+
+/*when we are running loop upto n*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num,i=0;
+    cin>>num;
+    
+    if(num<=1)
+    {
+        cout<<"not prime";
+    }
+    
+    for(i=2; i<num; i++)
+    {
+        if(num%i==0)
+        {
+            cout<<"not prime";
+            break;
+        }
+    }
+    
+    if(i== num)
+    {
+        cout<<"prime";
+    }
+    
+    
+    return 0;
+}
+
+
+
+/*if running loop upto n*/
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num,temp,i=0;
+    cin>>num;
+    
+    if(num<=1)
+    {
+        cout<<"not prime";
+    }
+    
+    else{
+    
+    for(i=2; i<=num/2; i++)
+    {
+        if(num%i==0)
+        {
+            temp++;
+            break;
+        }
+    }
+    
+    
+    if(temp>0)
+    {
+        cout<<"not prime";
+    }
+    
+    else{
+        cout<<"prime";
+    }
+    
+   }
+    
+    
+    return 0;
+}
+
