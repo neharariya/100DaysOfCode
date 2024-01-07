@@ -99,6 +99,25 @@ int main()
     return 0;
 }
 
+/*WRITING THE NUMBER IN REVERSE ORDER*/
 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int num=0;
+   cin>>num;
+   int ans=0;
+   
+   for(; num>0;num/=10)
+   {
+       ans= num%10 + ans*10;
+   }
+   
+   cout<<ans;
+    return 0;
+}
 
 
