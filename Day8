@@ -29,3 +29,48 @@ int main()
     }
     return 0;
 }
+
+
+/* BETTER OPTIMIZED CODE */
+
+#include <iostream>
+#include<climits>
+
+using namespace std;
+
+int main()
+{
+    
+    int i,j=0;
+    
+    int arr[5]= {7,4,8,5,3};
+    
+    for(i=0; i<4;i++)
+    {
+        bool swapped=0;
+        /* this is a boolen variable made for the case when array is already sorted, so when swapped =0 so the array is 
+           already sorted no need to sort we can directly breal the loop*/
+        
+        for(j=0; j<4-i;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                swap(arr[j],arr[j+1]);
+                
+                swapped=1;
+            }
+        }
+        
+        if(swapped=0)
+        {
+            break;
+        }
+    }
+
+    for(i=0; i<5;i++)
+    {
+        cout<<arr[i];
+    }
+    return 0;
+}
+
