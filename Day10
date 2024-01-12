@@ -33,7 +33,7 @@ int main()
     while(first<=last)
     { 
         
-        mid = (first + last)/2;
+        mid = first + (last - first)/2;
         
         if(arr[mid]==search)
         {
@@ -93,7 +93,7 @@ int main()
     while(first<=last)
     { 
         
-        mid = (first + last)/2;
+         mid = first + (last - first)/2;
         
         if(arr[mid]==search)
         {
