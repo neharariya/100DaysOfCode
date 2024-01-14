@@ -31,3 +31,47 @@ int main()
     
     return 0;
 }
+
+ CODE FOR FINDING THE THIRD SMALLEST ELEMENT IN AN ARRAY
+
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+int main()
+{
+    int arr[5]= {1,7,6,2,4};
+    
+    int first= INT_MAX;
+    int second= INT_MAX;
+    int third= INT_MAX;
+    
+    for(int i=0; i<5;i++)
+    {
+        if(arr[i]<first)
+        {
+            third= second;
+            second= first;
+            
+            first= arr[i];
+        }
+        
+        else if(arr[i]<second)
+        {
+            third= second;
+            second= arr[i];
+        }
+        
+        else if(arr[i]<third)
+        {
+ 
+            third= arr[i];
+        }
+    }
+    
+    cout<< third;
+    
+
+    return 0;
+}
