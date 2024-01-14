@@ -1,0 +1,33 @@
+Count the total number of squares that can be visited by Bishop in one move
+
+Given the position of a Bishop on an 8 * 8 chessboard, the task is to count the total number of squares that can be visited by the Bishop in one move. The position of the Bishop is denoted using row and column number of the chessboard. 
+
+
+
+include <iostream>
+
+using namespace std;
+
+int main()
+{
+    // position of Bishop//
+    int column, row;
+    cin>>column>>row;
+    
+    int count=0;
+    // no. of steps taken by bishop when it will either end in last row or last column//
+    count = min(8-row, 8-column);
+    
+    // no. of steps taken when end in either 1st row or last column//
+    count+= min(8-column, row-1);
+    
+    // no. of steps taken when end in either 1st row or ist column//
+    count+= min(column-1, row-1);
+    
+    // no. of steps taken when end in either last row or ist column//
+    count+= min(column-1, 8-row)
+    
+    cout<<count;
+    
+    return 0;
+}
