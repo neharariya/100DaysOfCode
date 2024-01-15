@@ -79,3 +79,86 @@ public:
 
                              }
               };
+
+
+
+/* FINDING SQUARE ROOT*/
+
+
+
+BRUTE-FORCE APPROCH:-
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int num,i;
+  
+  cin>>num;
+  
+  if(num<0)
+  cout<<"square root not possible";
+  
+  for(i=0; i*i<=num;i++)
+  {  }
+  
+  cout<<i-1;
+
+    return 0;
+}
+
+/* BINARY-SEARCH APPROCH (OPTIMIZED APPROCH) */
+
+Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+
+
+class Solution {
+public:
+    int mySqrt(int x) {
+
+       int start = 0;
+       int end= x;
+       int mid;
+       int ans=0;
+
+       if(x<2)
+       {
+           return x;
+       }
+
+    while(start<=end)
+    {
+        mid= start + (end-start)/2;
+
+
+        if(mid==x/mid)
+        {
+            ans=mid;
+            break;
+        }
+
+        else if(mid>x/mid)
+        {
+            end = mid-1;
+
+        }
+
+        else{
+            ans=mid;
+            start = mid+1;
+        }
+
+        
+    }
+
+    return ans;
+        
+    }
+};
+
+
+
