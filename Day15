@@ -1,0 +1,78 @@
+Given an array of size N consisting of only 0's and 1's. The array is sorted in such a manner that all the 1's are placed first and then they are followed by all the 0's. Find the count of all the 0's.
+
+CODE(Binary search method):-
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+        int arr[12]= {1,1,1,1,1,1,1,1,1,0,0,0};
+        
+        int start=0;
+        int end= 11;
+        int mid;
+        int first=0;
+        int last=0;
+        
+        while(start<=end)
+        {
+            mid = start + (end-start)/2;
+            
+            if(arr[mid]==0)
+            {
+                first= mid;
+                end = mid-1;
+                
+            }
+            
+            else
+      
+            {
+                start=mid+1;
+            }
+        
+        }
+        
+        start=0;
+        end=11;
+        
+        
+        while(start<=end)
+        {
+            mid = start + (end-start)/2;
+            
+            if(arr[mid]==0)
+            {
+                last = mid;
+                start = mid+1;
+                
+            }
+            
+            else
+      
+            {
+                start=mid+1;
+            }
+        
+        }
+        
+        if(last!=0 || first!=0)
+        {
+        cout<<(last-first +1);
+        }
+        
+        if(last==0 && first==0)
+        {
+            cout<<0;
+        }
+        
+        
+        
+        
+        
+        
+
+    return 0;
+}
