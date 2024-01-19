@@ -26,3 +26,34 @@ Given a mountain array arr, return the index i such that arr[0] < arr[1] < ... <
 
         }
 
+
+but this code will give an error when our mid value reach to 0 like in the case when arr={1,6,3,2,1} here our mid value will be equal to zero this will create an issue as when check mid-1 value than our code will 
+access the memory location which is out of bound the array, 
+
+so, to resolve this issue we can write mid= end + (start-end)/2 because it will always give a non-zero value.
+
+
+  int start=0;
+        int end= arr.size()-1;
+        int mid;
+
+        while(start<=end)
+        {
+            mid = end + (start-end)/2;
+
+            if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
+            {
+                break;
+            }
+
+            else if(arr[mid]>arr[mid-1])
+            {
+                start = mid+1;
+            }
+
+            else{
+                end= mid-1;
+            }
+
+        }
+
