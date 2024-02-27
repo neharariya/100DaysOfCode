@@ -1,0 +1,26 @@
+Adding the digits of a number until we don't get the single digit number:- 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num =499;
+    int ans=0;
+    
+    while(num>9)
+    {
+        for(; num>0; num/=10)
+        {
+            ans = num%10 + ans;
+        }
+        
+        num = ans;
+        ans = 0;
+    }
+
+
+    cout<<num;
+    
+    return 0;
+}
