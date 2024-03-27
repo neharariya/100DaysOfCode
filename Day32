@@ -1,0 +1,34 @@
+CHECKING IF A NUMBER IS POWER OF 2 OR NOT:- (Revision)
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    /*power of 2*/
+    
+    int x;
+    cin>>x;
+    
+    if(x<=0)
+    {
+        cout<<"not power of 2";
+    }
+    
+    for(; x%2==0; x/=2)
+    {
+       
+    }
+    
+    if(x==1)
+    {
+        cout<<"power of 2";
+    }
+    
+    else
+    {
+        cout<<"not power of 2";
+    }
+    
+    return 0;
+}
