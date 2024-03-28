@@ -1,0 +1,31 @@
+
+TOTAL MOVES TAKEN BY BISHOP:-
+
+
+int min(int a,int b)
+ {
+     if(a>b)
+     return b;
+     
+     else
+     return a;
+ }
+
+ 
+int solve(int A, int B) {
+    
+    
+     int count=0;
+    
+    
+    count = min(8-B,8-A);
+    
+    count = min(8-B,A-1) + count;
+    
+     count = min(B-1,A-1) + count;
+     
+      count = min(B-1,8-A) + count;
+      
+      return count;
+    
+}
