@@ -1,0 +1,35 @@
+TODAY I SOLVED THE PROBLEM OF PRINTING ALL THE POSSIBLE SUBARRAYS OF AN ARRAY:-
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+     //printing all the possible subarrays//
+    
+    int arr[5] ={1,2,3,4,5};
+    
+    //fixing the starting point
+    
+    for(int i=0; i<5;i++)
+    {
+        //fixing the end point//
+        
+        for(int j=i;j<5;j++)
+        {
+            //printing the values in between start and end point//
+            
+            for(int k=i; k<=j;k++)
+            {
+                cout<<arr[k]<<" ";
+                
+            }
+            
+            cout<<endl;
+        }
+    }
+
+    return 0;
+}
