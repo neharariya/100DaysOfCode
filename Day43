@@ -1,0 +1,44 @@
+FINDING THE LARGEST DIFFERENCE BETWEEN TWO ELEMENTS OF AN ARRAY:-
+
+
+
+#include <iostream>
+#include<cmath>
+#include<climits>
+
+using namespace std;
+
+int main()
+{
+    int arr[8] = {16,2,4,8,10,15,14};
+    int suffix_max = 0;
+    int ans=INT_MIN;
+    
+    int suffix[8];
+    
+    for(int i=7; i>=0; i--)
+    {
+       suffix_max = max(arr[i],suffix_max);
+       suffix[i]=suffix_max;
+       
+        
+    }
+    
+    for(int i=6; i>=0;i--)
+    {
+        ans = max(suffix[i+1]-arr[i],ans);
+    }
+    
+    cout<<ans;
+    
+    
+    
+    
+    
+    
+    
+        
+        
+
+    return 0;
+}
