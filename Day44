@@ -1,0 +1,52 @@
+SPLIT ARRAY LARGEST SUM PROBLEM:-
+
+Given an array arr[] of N elements and a number K.,
+split the given array into K subarrays such that the maximum subarray sum achievable out of K subarrays formed is minimum possible. 
+Find that possible subarray sum.
+
+
+
+    int splitArray(int arr[] ,int N, int K) {
+       
+       int start=0,end=0,mid,ans=0;
+       
+       for(int i=0; i<N;i++)
+       {
+           end += arr[i];
+           
+           start = max(arr[i],start);
+       }
+       
+       while(start<=end)
+       {
+           mid = start + (end-start)/2;
+           int sum=0,count = 1;
+           
+           for(int i=0; i<N;i++)
+           {
+               
+               
+               sum += arr[i];
+               
+               if(sum>mid)
+               {
+                   count++;
+                   sum = arr[i];
+               }
+           }
+           
+           
+           if(count<=K)
+           {
+               ans = mid;
+               end = mid-1;
+           }
+           
+           else{
+               start = mid+1;
+               
+           }
+       }
+       
+       return ans;
+    }
